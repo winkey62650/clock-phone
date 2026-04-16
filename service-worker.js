@@ -1,8 +1,9 @@
-const CACHE_NAME = 'poker-clock-v1';
+const CACHE_NAME = 'clock-phone-v2';
 const urlsToCache = [
   './',
   './index.html',
-  './manifest.json'
+  './manifest.json',
+  './service-worker.js'
 ];
 
 // 安装时缓存资源
@@ -29,9 +30,27 @@ self.addEventListener('activate', event => {
   );
 });
 
-// 拦截请求，优先使用缓存
+// 拦截请求：HTML 优先走网络，静态资源允许缓存
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
+
+  const requestUrl = new URL(event.request.url);
+  const isDocument = event.request.mode === 'navigate' || requestUrl.pathname.endsWith('.html');
+
+  if (isDocument) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put('./index.html', responseToCache);
+          });
+          return response;
+        })
+        .catch(() => caches.match('./index.html'))
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request)
