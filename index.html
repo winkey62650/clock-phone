@@ -14,15 +14,24 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
     * { margin:0; padding:0; box-sizing:border-box; }
-    html, body { width: 100%; height: 100%; }
-    /* ── 背景 ── */
+    /* ── iPhone 16 尺寸: 390 x 844 ── */
+    html {
+      width: 390px;
+      height: 844px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1a1a1a;
+    }
     body {
+      width: 390px;
+      height: 844px;
       background: #0c0c0c;
       background-image:
         repeating-linear-gradient(45deg,  rgba(212,175,55,0.04) 0 1px, transparent 1px 6px),
         repeating-linear-gradient(-45deg, rgba(212,175,55,0.03) 0 1px, transparent 1px 6px);
       font-family: 'Oswald', 'Arial Black', sans-serif;
-      height: 100dvh;
       display: flex;
       flex-direction: column;
       overflow: hidden;
