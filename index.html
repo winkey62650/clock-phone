@@ -661,6 +661,68 @@
     }
     .cfg-confirm:hover { filter: brightness(1.12); }
     .cfg-confirm:active { transform: scale(0.96); }
+
+    /* ── iPhone 16 横屏优化 (844x390) ── */
+    @media (min-width: 830px) and (max-height: 400px) {
+      /* 顶栏 */
+      .topbar {
+        padding: 6px 16px 4px;
+      }
+      .brand { font-size: 18px; letter-spacing: 4px; }
+      .level-info { font-size: 11px; }
+      .progress-wrap { width: 100px; margin-bottom: 3px; }
+
+      /* 主内容 */
+      .main {
+        padding: 0 12px;
+      }
+      .col {
+        padding: 6px 8px;
+      }
+
+      /* 杯数 */
+      .cups-label { font-size: 16px; margin-bottom: 4px; }
+      .cups-number { font-size: 60px; }
+      .cup-btns { margin-top: 8px; gap: 6px; }
+
+      /* 计时器 */
+      .timer-digits { font-size: 80px; letter-spacing: -2px; margin-bottom: 2px; }
+      .blind-now-big { font-size: 20px; letter-spacing: 1px; }
+      .next-label { font-size: 9px; }
+      .next-value { font-size: 14px; }
+      .next-wrap { margin-top: 4px; gap: 2px; }
+
+      /* 筹码 */
+      .chips-grid { gap: 6px 4px; }
+      .chip-wrap svg,
+      .chip-wrap img {
+        width: clamp(60px, 10vw, 90px);
+        height: clamp(60px, 10vw, 90px);
+      }
+      .chip-label { font-size: 12px; }
+
+      /* 底栏 */
+      .bottombar {
+        padding: 6px 12px;
+        gap: 8px;
+      }
+      .controls-area {
+        gap: 6px;
+      }
+      .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+
+      /* 浮动按钮 */
+      .cup-float {
+        bottom: 12px;
+        right: 12px;
+        padding: 6px 10px;
+        gap: 8px;
+      }
+      .cup-float-label { font-size: 10px; }
+    }
   </style>
 </head>
 <body>
