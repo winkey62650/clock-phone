@@ -982,11 +982,13 @@
 
   render();
 
-  // ── PWA Service Worker 注册 ──
+  // ── 清理旧版 PWA 缓存，避免手机继续使用历史布局 ──
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js')
-      .then(() => console.log('Service Worker 已注册'))
-      .catch(err => console.log('Service Worker 注册失败:', err));
+    navigator.serviceWorker.getRegistrations()
+      .then(registrations => Promise.all(registrations.map(registration => registration.unregister())))
+      .then(() => 'caches' in window ? caches.keys().then(keys => Promise.all(keys.map(key => caches.delete(key)))) : null)
+      .then(() => console.log('旧缓存已清理'))
+      .catch(err => console.log('缓存清理失败:', err));
   }
 
   // ── 防止屏幕休眠（全屏模式） ──
