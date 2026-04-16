@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=844, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="微醺Poker Clock">
@@ -14,19 +14,15 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
     * { margin:0; padding:0; box-sizing:border-box; }
-    /* ── iPhone 16 横屏尺寸: 844 x 390 ── */
+    /* ── 真机横屏自适应 ── */
     html {
-      width: 844px;
-      height: 390px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 100%;
+      height: 100%;
       background: #1a1a1a;
     }
     body {
-      width: 844px;
-      height: 390px;
+      width: 100vw;
+      min-height: 100dvh;
       background: #0c0c0c;
       background-image:
         repeating-linear-gradient(45deg,  rgba(212,175,55,0.04) 0 1px, transparent 1px 6px),
@@ -35,6 +31,7 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      margin: 0;
       padding: max(0px, env(safe-area-inset-top)) max(0px, env(safe-area-inset-right)) max(0px, env(safe-area-inset-bottom)) max(0px, env(safe-area-inset-left));
     }
 
