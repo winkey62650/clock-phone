@@ -660,6 +660,137 @@
       .cup-float-label { font-size: 12px; }
       .btn-cup-add, .btn-cup-sub { padding: 4px 8px; font-size: 14px; }
     }
+
+    /* ── Huawei nova 5 Pro 横屏优化（约 780×360 CSS px）── */
+    @media (min-width: 700px) and (max-width: 829px) and (max-height: 430px) and (orientation: landscape) {
+      body {
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        overflow: hidden;
+      }
+
+      .topbar {
+        min-height: 38px;
+        padding: 2px max(8px, env(safe-area-inset-right)) 2px max(8px, env(safe-area-inset-left));
+      }
+      .table-title {
+        font-size: 28px;
+        letter-spacing: 2px;
+      }
+      .edit-icon {
+        font-size: 10px;
+      }
+      .topbar-right {
+        flex-direction: row;
+        gap: 5px;
+      }
+      .tv-btn,
+      .cfg-btn {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        font-size: 15px;
+        line-height: 1;
+      }
+
+      .main {
+        grid-template-columns: 0.82fr 1.32fr 0.86fr;
+        padding: 0 max(2px, env(safe-area-inset-right));
+        padding-left: max(2px, env(safe-area-inset-left));
+      }
+      .col {
+        padding: 2px 4px;
+      }
+      .col-timer {
+        gap: 3px;
+      }
+
+      .level-info {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+      }
+      .progress-wrap {
+        width: 118px !important;
+        height: 4px;
+        margin-top: 3px;
+        margin-bottom: 2px !important;
+      }
+      .timer-digits {
+        font-size: 82px;
+        letter-spacing: -2px;
+      }
+      .blind-now-big {
+        font-size: 24px;
+        letter-spacing: 1px;
+      }
+      .next-wrap {
+        margin-top: 1px;
+        gap: 0;
+      }
+      .next-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+      }
+      .next-value {
+        font-size: 17px;
+      }
+
+      .cups-label {
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-bottom: 3px;
+      }
+      .cups-number {
+        font-size: 76px;
+      }
+
+      .chips-grid {
+        gap: 3px 2px;
+      }
+      .chip-wrap {
+        gap: 1px;
+      }
+      .chip-wrap svg,
+      .chip-wrap img {
+        width: 62px;
+        height: 62px;
+      }
+      .chip-label {
+        font-size: 13px;
+      }
+
+      .bottombar {
+        min-height: 38px;
+        padding: 2px max(4px, env(safe-area-inset-right)) max(3px, env(safe-area-inset-bottom)) max(4px, env(safe-area-inset-left));
+      }
+      .controls-area {
+        gap: 4px;
+      }
+      .btn {
+        min-height: 30px;
+        padding: 4px 8px;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      .cup-float {
+        bottom: max(4px, env(safe-area-inset-bottom));
+        right: max(4px, env(safe-area-inset-right));
+        padding: 3px 5px;
+        gap: 3px;
+      }
+      .cup-float-label {
+        display: none;
+      }
+      .btn-cup-add,
+      .btn-cup-sub {
+        min-width: 30px;
+        min-height: 30px;
+        padding: 3px 8px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
